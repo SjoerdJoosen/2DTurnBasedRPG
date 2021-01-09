@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace turnBasedRPG
 {
-    class HealthPotion
+    public class HealthPotion
     {
-        public int HealthRestored { get; set; }
+        public int HealthRestored { get; private set; }
 
         public HealthPotion(int healthRestored)
         {
             HealthRestored = healthRestored;
         }
-
-        //player.CurrentHealth = (player.CurrentHealth + potion.HealthRestored);
-        //playerHP.Text = player.CurrentHealth.ToString();
     }
 }

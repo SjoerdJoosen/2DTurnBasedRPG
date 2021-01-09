@@ -11,58 +11,48 @@ using System.Windows.Forms;
 
 namespace turnBasedRPG
 {
-    
     public class Player : LivingCreatures
     {
-        private Player player;
-        private HealthPotion potion;
-        private Enemy enemy;
-        private RandomNumber randomNumber;
+/*        public int CurrentHealth { get; private set; }
+        public int MaximumHealth { get; private set; }*/
 
         public Player(int currentHealth, int maximumHealth) : base (currentHealth, maximumHealth)
         {
-
+            CurrentHealth = currentHealth;
+            MaximumHealth = maximumHealth;
         }
 
-        /*public void DealPlayerDamage()
+        public void DealPlayerDamage()
         {
-            player = new Player(100, 100);
-            enemy = new Enemy(100, 100);
-            potion = new HealthPotion(33);
-            randomNumber = new RandomNumber();
+            Battlescreen.enemy.CurrentHealth = Battlescreen.enemy.CurrentHealth - Battlescreen.randomNumber.RandomDamageOutput(0, 30);
 
-            playerHP.Text = player.CurrentHealth.ToString();
-            enemyHP.Text = enemy.CurrentHealth.ToString();
-
-            enemy.CurrentHealth = enemy.CurrentHealth - randomNumber.RandomDamageOutput(0, 30);
-            enemyHP.Text = enemy.CurrentHealth.ToString();
-            //MessageBox.Show($"Player dealt { randomNumber.RandomDamageOutput(0, 30) } damage");
-            player.CurrentHealth = player.CurrentHealth - randomNumber.RandomDamageOutput(0, 30);
-            playerHP.Text = player.CurrentHealth.ToString();
-            //MessageBox.Show($"Enemy dealt { randomNumber.RandomDamageOutput(0, 30) } damage");
-
-            if (player.CurrentHealth <= 0)
+            if (Battlescreen.enemy.CurrentHealth <= 0)
             {
-                player.CurrentHealth = 0;
-                playerHP.Text = player.CurrentHealth.ToString();
+                Battlescreen.enemy.CurrentHealth = 0;
+                MessageBox.Show("Congratulations, you beat the monster");
+                
+            }
+        }
+
+        public void ReceivePlayerDamage()
+        {
+            Battlescreen.player.CurrentHealth = Battlescreen.player.CurrentHealth - Battlescreen.randomNumber.RandomDamageOutput(0, 30);
+
+            if (Battlescreen.player.CurrentHealth <= 0)
+            {
+                Battlescreen.player.CurrentHealth = 0;
                 MessageBox.Show("you are dead, not big surprise");
-                this.Hide();
             }
-
-            else if (enemy.CurrentHealth <= 0)
-            {
-                enemy.CurrentHealth = 0;
-                enemyHP.Text = enemy.CurrentHealth.ToString();
-                MessageBox.Show("Congratulations, you beat tha monstah");
-                this.Hide();
-            }
-        }*/
-
-        public void ReceiveDamage()
-        {
-
         }
-
         
+        public void HealPlayer()
+        {
+            Battlescreen.player.CurrentHealth = Battlescreen.player.CurrentHealth + Battlescreen.potion.HealthRestored;
+
+            if (Battlescreen.player.CurrentHealth >= 100)
+            {
+                Battlescreen.player.CurrentHealth = Battlescreen.player.MaximumHealth;
+            }
+        }
     }
 }

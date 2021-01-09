@@ -15,7 +15,7 @@ namespace turnBasedRPG
             Hard,
             Impossible
         }
-        static void Main(string[] args)
+        private void difficulty()
         {
             ChosenDifficulty myDifficulty = ChosenDifficulty.Medium;
             switch (myDifficulty)
