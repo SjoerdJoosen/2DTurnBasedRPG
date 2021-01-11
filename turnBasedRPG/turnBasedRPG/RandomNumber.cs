@@ -8,11 +8,11 @@ namespace turnBasedRPG
 {
     public class RandomNumber
     {
-        private static Random generator = new Random();
+        private readonly Random random = new Random();
 
-        public int RandomDamageOutput (int minimumValue, int maximumValue)
+        public int RandomDamageOutput (int minimumDamage, int maximumDamage)
         {
-            return generator.Next(minimumValue, maximumValue + 1);
+            return random.Next(minimumDamage, maximumDamage);
         }
     }
 }

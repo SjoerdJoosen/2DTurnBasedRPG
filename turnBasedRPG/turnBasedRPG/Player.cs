@@ -13,45 +13,46 @@ namespace turnBasedRPG
 {
     public class Player : LivingCreatures
     {
-/*        public int CurrentHealth { get; private set; }
-        public int MaximumHealth { get; private set; }*/
-
+        public int randomNumber { get; private set; }
         public Player(int currentHealth, int maximumHealth) : base (currentHealth, maximumHealth)
         {
-            CurrentHealth = currentHealth;
-            MaximumHealth = maximumHealth;
+
         }
 
-        public void DealPlayerDamage()
+        public void DealEnemyDamage()
         {
-            Battlescreen.enemy.CurrentHealth = Battlescreen.enemy.CurrentHealth - Battlescreen.randomNumber.RandomDamageOutput(0, 30);
+            randomNumber = PlayerManager.generator.RandomDamageOutput(0, 30);
+            PlayerManager.enemy.CurrentHealth = PlayerManager.enemy.CurrentHealth - randomNumber;
+            MessageBox.Show($"Player dealt {randomNumber} damage");
 
-            if (Battlescreen.enemy.CurrentHealth <= 0)
+            if (PlayerManager.enemy.CurrentHealth <= 0)
             {
-                Battlescreen.enemy.CurrentHealth = 0;
-                MessageBox.Show("Congratulations, you beat the monster");
-                
+                PlayerManager.enemy.CurrentHealth = 0;
+                MessageBox.Show("Congratulations, you beat the monster");             
             }
         }
 
         public void ReceivePlayerDamage()
         {
-            Battlescreen.player.CurrentHealth = Battlescreen.player.CurrentHealth - Battlescreen.randomNumber.RandomDamageOutput(0, 30);
+            randomNumber = PlayerManager.generator.RandomDamageOutput(0, 30);
+            PlayerManager.player.CurrentHealth = PlayerManager.player.CurrentHealth - randomNumber;
+            MessageBox.Show($"Enemy dealt {randomNumber} damage");
 
-            if (Battlescreen.player.CurrentHealth <= 0)
+            if (PlayerManager.player.CurrentHealth <= 0)
             {
-                Battlescreen.player.CurrentHealth = 0;
+                PlayerManager.player.CurrentHealth = 0;
                 MessageBox.Show("you are dead, not big surprise");
             }
         }
         
         public void HealPlayer()
         {
-            Battlescreen.player.CurrentHealth = Battlescreen.player.CurrentHealth + Battlescreen.potion.HealthRestored;
+            PlayerManager.player.CurrentHealth = PlayerManager.player.CurrentHealth + PlayerManager.potion.HealthRestored;
+            MessageBox.Show($"Player restored {PlayerManager.potion.HealthRestored} Health");
 
-            if (Battlescreen.player.CurrentHealth >= 100)
+            if (PlayerManager.player.CurrentHealth >= 100)
             {
-                Battlescreen.player.CurrentHealth = Battlescreen.player.MaximumHealth;
+                PlayerManager.player.CurrentHealth = PlayerManager.player.MaximumHealth;
             }
         }
     }
