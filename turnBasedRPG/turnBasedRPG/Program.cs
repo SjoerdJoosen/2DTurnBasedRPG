@@ -16,7 +16,7 @@ namespace turnBasedRPG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Battlescreen());
+            Application.Run(new DifficultySelection());
         }
     }
 }

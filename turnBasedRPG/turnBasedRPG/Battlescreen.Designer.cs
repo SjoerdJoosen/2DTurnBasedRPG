@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.enemyHP = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.PlayerNameLabel = new System.Windows.Forms.Label();
             HP = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             HP2 = new System.Windows.Forms.Label();
@@ -52,39 +53,35 @@
             // HP
             // 
             HP.AutoSize = true;
-            HP.Location = new System.Drawing.Point(13, 22);
-            HP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            HP.Location = new System.Drawing.Point(12, 50);
             HP.Name = "HP";
-            HP.Size = new System.Drawing.Size(31, 17);
+            HP.Size = new System.Drawing.Size(25, 13);
             HP.TabIndex = 2;
             HP.Text = "HP:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(13, 52);
-            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Location = new System.Drawing.Point(12, 74);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(199, 17);
+            label2.Size = new System.Drawing.Size(147, 13);
             label2.TabIndex = 7;
             label2.Text = "Turns until potion replenishes:";
             // 
             // HP2
             // 
             HP2.AutoSize = true;
-            HP2.Location = new System.Drawing.Point(691, 22);
-            HP2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            HP2.Location = new System.Drawing.Point(517, 50);
             HP2.Name = "HP2";
-            HP2.Size = new System.Drawing.Size(31, 17);
+            HP2.Size = new System.Drawing.Size(25, 13);
             HP2.TabIndex = 9;
             HP2.Text = "HP:";
             // 
             // Attack
             // 
-            this.Attack.Location = new System.Drawing.Point(17, 506);
-            this.Attack.Margin = new System.Windows.Forms.Padding(4);
+            this.Attack.Location = new System.Drawing.Point(13, 362);
             this.Attack.Name = "Attack";
-            this.Attack.Size = new System.Drawing.Size(167, 62);
+            this.Attack.Size = new System.Drawing.Size(125, 50);
             this.Attack.TabIndex = 0;
             this.Attack.Text = "Attack";
             this.Attack.UseVisualStyleBackColor = true;
@@ -92,28 +89,26 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 130);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 106);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 369);
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // playerHP
             // 
             this.playerHP.AutoSize = true;
-            this.playerHP.Location = new System.Drawing.Point(53, 22);
-            this.playerHP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.playerHP.Location = new System.Drawing.Point(42, 50);
             this.playerHP.Name = "playerHP";
-            this.playerHP.Size = new System.Drawing.Size(0, 17);
+            this.playerHP.Size = new System.Drawing.Size(0, 13);
             this.playerHP.TabIndex = 3;
             // 
             // Defend
             // 
-            this.Defend.Location = new System.Drawing.Point(183, 506);
-            this.Defend.Margin = new System.Windows.Forms.Padding(4);
+            this.Defend.Location = new System.Drawing.Point(138, 362);
             this.Defend.Name = "Defend";
-            this.Defend.Size = new System.Drawing.Size(167, 62);
+            this.Defend.Size = new System.Drawing.Size(125, 50);
             this.Defend.TabIndex = 4;
             this.Defend.Text = "Defend";
             this.Defend.UseVisualStyleBackColor = true;
@@ -122,19 +117,18 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(17, 566);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(13, 411);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(67, 62);
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
             // UsePotion
             // 
-            this.UsePotion.Location = new System.Drawing.Point(99, 566);
-            this.UsePotion.Margin = new System.Windows.Forms.Padding(4);
+            this.UsePotion.Location = new System.Drawing.Point(75, 411);
             this.UsePotion.Name = "UsePotion";
-            this.UsePotion.Size = new System.Drawing.Size(167, 62);
+            this.UsePotion.Size = new System.Drawing.Size(125, 50);
             this.UsePotion.TabIndex = 6;
             this.UsePotion.Text = "Use potion";
             this.UsePotion.UseVisualStyleBackColor = true;
@@ -143,35 +137,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(165, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 8;
             // 
             // enemyHP
             // 
             this.enemyHP.AutoSize = true;
-            this.enemyHP.Location = new System.Drawing.Point(731, 22);
-            this.enemyHP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.enemyHP.Location = new System.Drawing.Point(548, 50);
             this.enemyHP.Name = "enemyHP";
-            this.enemyHP.Size = new System.Drawing.Size(0, 17);
+            this.enemyHP.Size = new System.Drawing.Size(0, 13);
             this.enemyHP.TabIndex = 10;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(694, 130);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(520, 106);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(333, 369);
+            this.pictureBox3.Size = new System.Drawing.Size(250, 250);
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
+            // PlayerNameLabel
+            // 
+            this.PlayerNameLabel.AutoSize = true;
+            this.PlayerNameLabel.Location = new System.Drawing.Point(12, 18);
+            this.PlayerNameLabel.Name = "PlayerNameLabel";
+            this.PlayerNameLabel.Size = new System.Drawing.Size(0, 13);
+            this.PlayerNameLabel.TabIndex = 12;
+            // 
             // Battlescreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 660);
+            this.ClientSize = new System.Drawing.Size(799, 479);
+            this.Controls.Add(this.PlayerNameLabel);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.enemyHP);
             this.Controls.Add(HP2);
@@ -184,9 +185,8 @@
             this.Controls.Add(HP);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Attack);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Battlescreen";
-            this.Text = "Form1";
+            this.Text = "Battlescreen";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -206,6 +206,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label enemyHP;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label PlayerNameLabel;
     }
 }
 

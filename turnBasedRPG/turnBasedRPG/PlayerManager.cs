@@ -14,7 +14,7 @@ namespace turnBasedRPG
     {
         public static Player player { get; private set; }
         public static HealthPotion potion { get; private set; }
-        public static Enemy enemy { get; private set; }
+        public static Enemy enemy { get; set; }
         public static RandomNumber generator { get; private set; }
 
         public PlayerManager()
@@ -28,19 +28,31 @@ namespace turnBasedRPG
         public void Attack()
         {
             player.DealEnemyDamage();
-            player.ReceivePlayerDamage();
+            if (enemy.CurrentHealth > 0)
+            {
+                player.ReceivePlayerDamage(false);
+            }
         }
 
         public void Defend()
         {
-            player.CurrentHealth = player.CurrentHealth - generator.RandomDamageOutput(0, 15);
-            player.ReceivePlayerDamage();
+            player.ReceivePlayerDamage(true);
         }
 
         public void UsePotion()
         {
             player.HealPlayer();
-            player.ReceivePlayerDamage();
+            player.ReceivePlayerDamage(false);
+        }
+
+        public void EndGame()
+        {
+            if (player.CurrentHealth == 0 || enemy.CurrentHealth == 0)
+            {
+                DifficultySelection difficultySelectionForm = new DifficultySelection();
+                Battlescreen.ActiveForm.Hide();
+                difficultySelectionForm.Show();
+            }
         }
     }
 }

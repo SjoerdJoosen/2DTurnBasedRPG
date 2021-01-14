@@ -10,7 +10,7 @@ namespace turnBasedRPG
     {
         private readonly Random random = new Random();
 
-        public int RandomDamageOutput (int minimumDamage, int maximumDamage)
+        public int RandomDamageOutput(int minimumDamage, int maximumDamage)
         {
             return random.Next(minimumDamage, maximumDamage);
         }

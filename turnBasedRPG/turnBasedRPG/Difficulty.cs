@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace turnBasedRPG
 {
-    class Difficulty
+    public class Difficulty
     {
-        enum ChosenDifficulty
+        public enum ChosenDifficulty
         {
             Easy,
             Medium,
             Hard,
             Impossible
         }
-        private void difficulty()
+        public void SelectedDifficulty()
         {
-            ChosenDifficulty myDifficulty = ChosenDifficulty.Medium;
+            ChosenDifficulty myDifficulty = ChosenDifficulty.Impossible;
             switch (myDifficulty)
             {
                 case ChosenDifficulty.Easy:
-                    Console.WriteLine("Easy difficulty");
+                    PlayerManager.enemy = new Enemy(50, 50);
                     break;
                 case ChosenDifficulty.Medium:
-                    Console.WriteLine("Medium difficulty");
+                    PlayerManager.enemy = new Enemy(100, 100);
                     break;
                 case ChosenDifficulty.Hard:
-                    Console.WriteLine("Hard difficulty");
+                    PlayerManager.enemy = new Enemy(150, 150);
                     break;
                 case ChosenDifficulty.Impossible:
-                    Console.WriteLine("Impossible difficulty");
+                    PlayerManager.enemy = new Enemy(200, 200);
                     break;
             }
         }
