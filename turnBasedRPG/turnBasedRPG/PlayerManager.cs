@@ -20,7 +20,6 @@ namespace turnBasedRPG
         public PlayerManager()
         {
             player = new Player(100, 100);
-            enemy = new Enemy(100, 100);
             potion = new HealthPotion(33);
             generator = new RandomNumber();
         }

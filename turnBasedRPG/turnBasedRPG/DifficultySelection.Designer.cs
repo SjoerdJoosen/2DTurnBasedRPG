@@ -39,23 +39,20 @@
             // 
             this.cb_DifficultySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_DifficultySelect.FormattingEnabled = true;
-            this.cb_DifficultySelect.Items.AddRange(new object[] {
-            "Easy",
-            "Medium",
-            "Hard",
-            "Impossible"});
-            this.cb_DifficultySelect.Location = new System.Drawing.Point(16, 124);
+            this.cb_DifficultySelect.Location = new System.Drawing.Point(21, 153);
+            this.cb_DifficultySelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_DifficultySelect.Name = "cb_DifficultySelect";
-            this.cb_DifficultySelect.Size = new System.Drawing.Size(166, 21);
+            this.cb_DifficultySelect.Size = new System.Drawing.Size(220, 24);
             this.cb_DifficultySelect.TabIndex = 4;
             this.cb_DifficultySelect.SelectedIndexChanged += new System.EventHandler(this.cb_DifficultySelect_SelectedIndexChanged);
             // 
             // GoToBattlescreen
             // 
             this.GoToBattlescreen.Font = new System.Drawing.Font("HP Simplified", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoToBattlescreen.Location = new System.Drawing.Point(16, 155);
+            this.GoToBattlescreen.Location = new System.Drawing.Point(21, 191);
+            this.GoToBattlescreen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GoToBattlescreen.Name = "GoToBattlescreen";
-            this.GoToBattlescreen.Size = new System.Drawing.Size(166, 93);
+            this.GoToBattlescreen.Size = new System.Drawing.Size(221, 114);
             this.GoToBattlescreen.TabIndex = 5;
             this.GoToBattlescreen.Text = "Go to game!";
             this.GoToBattlescreen.UseVisualStyleBackColor = true;
@@ -65,9 +62,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("HP Simplified", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 98);
+            this.label1.Location = new System.Drawing.Point(16, 121);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 23);
+            this.label1.Size = new System.Drawing.Size(217, 28);
             this.label1.TabIndex = 6;
             this.label1.Text = "Select your difficulty:";
             // 
@@ -75,29 +73,32 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("HP Simplified", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(16, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 23);
+            this.label2.Size = new System.Drawing.Size(205, 28);
             this.label2.TabIndex = 7;
             this.label2.Text = "Insert Player Name:";
             // 
             // PlayerNameBox
             // 
-            this.PlayerNameBox.Location = new System.Drawing.Point(18, 37);
+            this.PlayerNameBox.Location = new System.Drawing.Point(24, 46);
+            this.PlayerNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PlayerNameBox.Name = "PlayerNameBox";
-            this.PlayerNameBox.Size = new System.Drawing.Size(164, 20);
+            this.PlayerNameBox.Size = new System.Drawing.Size(217, 22);
             this.PlayerNameBox.TabIndex = 8;
             // 
             // DifficultySelection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(208, 294);
+            this.ClientSize = new System.Drawing.Size(277, 362);
             this.Controls.Add(this.PlayerNameBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GoToBattlescreen);
             this.Controls.Add(this.cb_DifficultySelect);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DifficultySelection";
             this.Text = "DifficultySelect";
             this.ResumeLayout(false);

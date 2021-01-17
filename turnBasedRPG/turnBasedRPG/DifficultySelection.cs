@@ -15,21 +15,26 @@ namespace turnBasedRPG
         public DifficultySelection()
         {
             InitializeComponent();
+            cb_DifficultySelect.DataSource = Enum.GetValues(typeof(Difficulty.ChosenDifficulty));
         }
 
 
         private void GoToBattlescreen_Click(object sender, EventArgs e)
         {
+
             string name = PlayerNameBox.Text;
-            PlayerName nameOfPlayer = new PlayerName(name);
-            Battlescreen BattlescreenForm = new Battlescreen(nameOfPlayer);
+            Player player = new Player(name);
+            
+            Battlescreen BattlescreenForm = new Battlescreen(player);
             BattlescreenForm.Show();
             this.Hide();
         }
 
         private void cb_DifficultySelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //cb_DifficultySelect.DataSource = Enum.GetValues(typeof(Difficulty.ChosenDifficulty));
+            ComboBox cmb = (ComboBox)sender;
+            int selectedIndex = cmb.SelectedIndex;
+            Difficulty difficulty = new Difficulty(selectedIndex);
         }
     }
 }

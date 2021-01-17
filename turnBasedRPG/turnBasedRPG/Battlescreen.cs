@@ -13,14 +13,18 @@ namespace turnBasedRPG
     public partial class Battlescreen : Form
     {
         public static PlayerManager playermanager { get; private set; }
+        public Player player { get; private set; }
         
-        public Battlescreen(PlayerName nameOfPlayer)
+        public Battlescreen(Player player)
         {
             InitializeComponent();
+            this.player = player;
+            PlayerNameLabel.Text = Player.playerName;
+            EnemyBox.Image = Properties.Resources.HardEnemy1;
+
             playermanager = new PlayerManager();
             enemyHP.Text = PlayerManager.enemy.CurrentHealth.ToString();
             playerHP.Text = PlayerManager.player.CurrentHealth.ToString();
-            PlayerNameLabel.Text = nameOfPlayer.ToString();
         }
 
         private void Attack_Click(object sender, EventArgs e)
@@ -44,5 +48,6 @@ namespace turnBasedRPG
             playerHP.Text = PlayerManager.player.CurrentHealth.ToString();
             playermanager.EndGame();
         }
+        
     }
 }

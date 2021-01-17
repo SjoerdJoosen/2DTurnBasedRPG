@@ -11,19 +11,31 @@ using System.Windows.Forms;
 
 namespace turnBasedRPG
 {
-    public class Player : LivingCreatures
+    public class Player
     {
+        //Encapsulation
         private int randomNumber { get; set; }
-        public Player(int currentHealth, int maximumHealth) : base(currentHealth, maximumHealth)
+        public int CurrentHealth { get; private set; }
+        public static string playerName { get; private set; }
+        private int MaximumHealth { get; set; }
+        
+        //Constructor overloading
+        public Player(int currentHealth, int maximumHealth)
         {
+            CurrentHealth = currentHealth;
+            MaximumHealth = maximumHealth;
+        }
 
+        public Player(string PlayerName)
+        {
+            playerName = PlayerName;
         }
 
         public void DealEnemyDamage()
         {
             randomNumber = PlayerManager.generator.RandomDamageOutput(5, 25);
             PlayerManager.enemy.CurrentHealth = PlayerManager.enemy.CurrentHealth - randomNumber;
-            MessageBox.Show($"Player dealt {randomNumber} damage");
+            MessageBox.Show($" {playerName} dealt {randomNumber} damage");
 
             if (PlayerManager.enemy.CurrentHealth <= 0)
             {
@@ -50,14 +62,14 @@ namespace turnBasedRPG
             if (PlayerManager.player.CurrentHealth <= 0)
             {
                 PlayerManager.player.CurrentHealth = 0;
-                MessageBox.Show("you are dead, not big surprise");
+                MessageBox.Show("Oh no, the monster killed you");
             }
         }
 
         public void HealPlayer()
         {
             PlayerManager.player.CurrentHealth = PlayerManager.player.CurrentHealth + PlayerManager.potion.HealthRestored;
-            MessageBox.Show($"Player restored {PlayerManager.potion.HealthRestored} Health");
+            MessageBox.Show($" {playerName} restored {PlayerManager.potion.HealthRestored} Health");
 
             if (PlayerManager.player.CurrentHealth >= 100)
             {

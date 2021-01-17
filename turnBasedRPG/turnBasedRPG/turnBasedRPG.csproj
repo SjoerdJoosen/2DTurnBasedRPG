@@ -61,10 +61,8 @@
     </Compile>
     <Compile Include="Enemy.cs" />
     <Compile Include="HealthPotion.cs" />
-    <Compile Include="LivingCreatures.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerManager.cs" />
-    <Compile Include="PlayerName.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumber.cs" />
@@ -82,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -95,6 +94,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\EasyEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MediumEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HardEnemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImpossibleEnemy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
